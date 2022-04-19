@@ -1,9 +1,14 @@
 <ul class="todo-list">
-  <li>
+  <li *ngFor="let todo of todoList; let i = index">
     <div class="view">
-      <input class="toggle" type="checkbox" />
-      <label></label>
-      <button class="destroy"></button>
+      <input 
+        class="toggle" 
+        type="checkbox"
+        [(ngModel)]="todoList[i].completed"
+        (click)="toggleComplete(i)"
+      />
+      <label>{{ todo.text }}</label>
+      <button class="destroy" (click)="onRemove(i)"></button>
     </div>
   </li>
 </ul>

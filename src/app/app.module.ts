@@ -6,6 +6,7 @@ import { environment } from '@app/environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TodosModule } from './todos/todos.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,8 @@ import { TodosModule } from './todos/todos.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot([], {
       runtimeChecks: {
         strictStateImmutability: true,
